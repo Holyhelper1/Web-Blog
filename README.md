@@ -30,5 +30,3 @@ Cхема для редакс стора (на клиенте):
 -   users: массив user: id / login / registeredAt / role
 
 
-
-

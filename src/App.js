@@ -4,7 +4,7 @@ const Div = styled.div`
 	color: #4B0082;
 	text-align: center;
 	text-shadow: 2px 2px 4px #004050;
-	background-color: #C0C0C0;
+	background-color: #C0C9C2;
 `;
 
 function App() {
