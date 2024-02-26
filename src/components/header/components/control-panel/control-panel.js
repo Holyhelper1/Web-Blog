@@ -51,4 +51,4 @@ const ControlPanelContainer = ({ className }) => {
 
 export const ControlPanel = styled(ControlPanelContainer)``;
 
-// продолжить с 10:01
+
