@@ -1,43 +1,65 @@
 import styled from 'styled-components';
 import { Icon } from '../../../../components';
 import { Link, useNavigate } from 'react-router-dom';
+import { Button } from '../../../../components';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	selectUserRole,
+	selectUserLogin,
+	selectUserSession,
+} from '../../../../selectors';
+import { ROLE } from '../../../../constants';
+import { logout } from '../../../../actions';
 
 const RightAlined = styled.div`
 	display: flex;
 	justify-content: flex-end;
+	align-items: center;
 `;
 
-const StyledLink = styled(Link)`
-	text-align: center;
-	font-size: 18px;
-	width: 100px;
-	height: 32px;
-	border: 1px solid #000;
-	background-color: #b0c4de;
-	box-shadow: 0 2px 3px #2f4f4f;
+const StyledIcon = styled.div`
 	&:hover {
-		background-color: #2f4f4f;
-		color: #fff;
+		cursor: pointer;
 	}
 `;
 
-const StyledButton = styled.div`
-&:hover {
-	cursor: pointer;
-}
-`
+const UserName = styled.div`
+	font-size: 18px;
+	font-weight: bold;
+	margin-right: 10px;
+`;
 
 const ControlPanelContainer = ({ className }) => {
+	const dispatch = useDispatch();
 	const navigate = useNavigate();
+	const roleId = useSelector(selectUserRole);
+	const login = useSelector(selectUserLogin);
+	const session = useSelector(selectUserSession);
+
 	return (
 		<div className={className}>
 			<RightAlined>
-				<StyledLink to="/login">Войти</StyledLink>
+				{roleId === ROLE.GUEST ? (
+					<Button>
+						<Link to="/login">Войти</Link>
+					</Button>
+				) : (
+					<>
+						<UserName>{login}</UserName>
+						<StyledIcon>
+							<Icon
+								id="fa-sign-out"
+								margin="0 0 0 10px"
+								onClick={() => dispatch(logout(session))}
+							/>
+						</StyledIcon>
+					</>
+				)}
 			</RightAlined>
 			<RightAlined>
-				<StyledButton onClick={() => navigate(-1)}>
+				<StyledIcon onClick={() => navigate(-1)}>
 					<Icon id="fa-backward" margin="10px 0 0 0px" />
-				</StyledButton>
+				</StyledIcon>
 				<Link to="/posts">
 					<Icon id="fa-file-text-o" margin="10px 0 0 16px" />
 				</Link>
@@ -50,5 +72,3 @@ const ControlPanelContainer = ({ className }) => {
 };
 
 export const ControlPanel = styled(ControlPanelContainer)``;
-
-
