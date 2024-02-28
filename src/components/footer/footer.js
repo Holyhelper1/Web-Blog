@@ -17,7 +17,6 @@ import styled from 'styled-components';
 				setWeather(weather[0].description);
 			});
 
-		console.log('Футер');
 	}, []);
 
 	return (
