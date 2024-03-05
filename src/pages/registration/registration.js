@@ -3,12 +3,12 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { server } from '../../bff';
-import {useState } from 'react';
-import {AuthFormError, Button, H2, Input } from '../../components';
+import { useState } from 'react';
+import { AuthFormError, Button, H2, Input } from '../../components';
 import { useResetForm } from '../../hooks';
 import { Navigate } from 'react-router-dom';
 import { setUser } from '../../actions';
-import { useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectUserRole } from '../../selectors';
 import { ROLE } from '../../constants';
 
@@ -55,25 +55,23 @@ const RegistrationContainer = ({ className }) => {
 
 	const roleId = useSelector(selectUserRole);
 
-	useResetForm(reset)
+	useResetForm(reset);
 
 	const onSubmit = ({ login, password }) => {
 		server.register(login, password).then(({ error, res }) => {
-
 			if (error) {
 				setServerError(`Ошибка запроса: ${error}`);
 				return;
 			}
 
 			dispatch(setUser(res));
+			sessionStorage.setItem('userData', JSON.stringify(res));
 		});
 	};
 	const formError =
 		errors?.login?.message || errors?.login?.message || errors?.passcheck?.message;
 
 	const errorMessage = formError || serverError;
-
-
 
 	if (roleId !== ROLE.GUEST) {
 		return <Navigate to="/" />;

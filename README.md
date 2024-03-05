@@ -16,7 +16,7 @@
 -   пользователи - users: id / login / password / registed_at / role_id
 -   роли - roles: id / name
 -   статьи - posts: id / title / image_url / content / published_at
--   комментарий - coments: id / author_id / post_id / content
+-   комментарий - coments: id / author_id / post_id / content / published_at
 
 Схема состояния на BFF:
 
@@ -25,8 +25,6 @@
 Cхема для редакс стора (на клиенте):
 
 -   user: id / login / roleId / session
--   posts: массив post: id / title / imageUrl / publeshedAt / commentsCount
--   post: id / title / imageUrl / content / publeshedAt / comments: массив comment: id / author / content / publeshedAt
+-   posts: массив post: id / title / imageUrl / publishedAt / commentsCount
+-   post: id / title / imageUrl / content / publishedAt / comments: массив comment: id / author / content / publishedAt
 -   users: массив user: id / login / registeredAt / role
-
-
