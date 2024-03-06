@@ -14,7 +14,7 @@ const CommentsContainer = ({ className, comments, postId }) => {
 	const requestServer = useServerRequest();
 
 	const onNewCommentAdd = (userId, postId, content) => {
-		dispatch(addCommentAsync( requestServer, userId, postId, content ));
+		dispatch(addCommentAsync(requestServer, userId, postId, content));
 		setNewComment('');
 	};
 
@@ -31,13 +31,14 @@ const CommentsContainer = ({ className, comments, postId }) => {
 					id="fa-paper-plane-o"
 					size="18px"
 					margin="0 0 0 10px"
-					onClick={() => onNewCommentAdd(  userId, postId, newComment)}
+					onClick={() => onNewCommentAdd(userId, postId, newComment)}
 				/>
 			</div>
 			<div className="comments">
 				{comments.map(({ id, author, content, publishedAt }) => (
 					<Comment
 						key={id}
+						postId={postId}
 						id={id}
 						author={author}
 						content={content}
@@ -50,22 +51,18 @@ const CommentsContainer = ({ className, comments, postId }) => {
 };
 
 export const Comments = styled(CommentsContainer)`
-
 	width: 580px;
-	margin:  0 auto;
+	margin: 0 auto;
 
 	& .new-comment {
 		display: flex;
 		width: 100%;
 		margin: 20px 0 0;
-
 	}
 	& .new-comment textarea {
 		height: 120px;
 		width: 550px;
 		font-size: 18px;
 		resize: none;
-
 	}
-
 `;

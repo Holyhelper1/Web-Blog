@@ -5,7 +5,7 @@ import { sessions } from '../sessions';
 export const updateUserRole = async (hash, userId, newUserRoleId) => {
 	const accessRoles = [ROLE.ADMIN];
 
-	const access = await sessions.access(hash, accessRoles)
+	const access = await sessions.access(hash, accessRoles);
 
 	if (!access) {
 		return {

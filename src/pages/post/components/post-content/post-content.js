@@ -3,7 +3,7 @@ import { H2, Icon } from '../../../../components';
 
 const PostContentContainer = ({
 	className,
-	post: { id, title, imageUrl, content, publeshedAt },
+	post: { id, title, imageUrl, content,  publishedAt },
 }) => {
 	return (
 		<div className={className}>
@@ -17,7 +17,7 @@ const PostContentContainer = ({
 						margin="0 7px 0 0"
 						onClick={() => {}}
 					/>
-					{publeshedAt}
+					{publishedAt}
 				</div>
 				<div className="buttons">
 					<Icon

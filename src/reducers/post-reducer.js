@@ -5,7 +5,7 @@ const initialPostState = {
 	title: '',
 	imageUrl: '',
 	content: '',
-	publeshedAt: '',
+	publishedAt: '',
 	comments: [],
 };
 

@@ -3,7 +3,7 @@ export const transformPost = (dbpost) => ({
 	title: dbpost.title,
 	content: dbpost.content,
 	imageUrl: dbpost.image_url,
-	publeshedAt: dbpost.published_at
+	publishedAt: dbpost.published_at
 })
 
 
