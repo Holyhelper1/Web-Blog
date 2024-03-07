@@ -11,6 +11,7 @@ export const useServerRequest = () => {
 			const request = ['register', 'authorize', 'fetchPost'].includes(operation)
 				? params
 				: [session, ...params];
+				
 			return server[operation](...request);
 		},
 		[session],
