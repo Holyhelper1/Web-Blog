@@ -44,6 +44,7 @@ const UserRowContainer = ({
 						))}
 					</select>
 					<Icon
+
 						id="fa-floppy-o"
 						margin="0 0 0 10px"
 						disabled={isSaveButtonDisabled}
@@ -51,7 +52,7 @@ const UserRowContainer = ({
 					/>
 				</div>
 			</TableRow>
-			<Icon id="fa-trash-o" margin="0 0 0 10px  " onClick={onUserRemove} />
+			<Icon id="fa-trash-o" margin="0 0 0 10px  "  onClick={onUserRemove} />
 		</div>
 	);
 };
