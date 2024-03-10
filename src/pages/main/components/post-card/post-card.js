@@ -62,7 +62,8 @@ border: 1px solid #000;
 
  & .post-card-footer {
 	padding: 5px;
-	border: 1px solid #000;
+	border-top: 1px solid #000;
+
  }
 
  & .post-card-info {
