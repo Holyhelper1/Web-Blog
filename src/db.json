@@ -15,13 +15,6 @@
       "role_id": 1
     },
     {
-      "login": "adawd",
-      "password": "qwert12",
-      "registed_at": "2041-11-28 03:13",
-      "role_id": 2,
-      "id": "_CcVu7Y"
-    },
-    {
       "login": "david",
       "password": "qwerty123",
       "registed_at": "2062-06-25 09:14",
@@ -210,6 +203,13 @@
       "published_at": "2041-04-08 11:10",
       "content": "ещё комент",
       "id": 8
+    },
+    {
+      "author_id": "001",
+      "post_id": "wW5qaef",
+      "published_at": "2055-05-06 19:52",
+      "content": "dawawdawd",
+      "id": 9
     }
   ],
   "sessions": [
@@ -289,6 +289,17 @@
         "roleId": 0
       },
       "id": 7
+    },
+    {
+      "hash": "0.29184104912741326565139843296492472290992736816406",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": 8
     }
   ]
 }

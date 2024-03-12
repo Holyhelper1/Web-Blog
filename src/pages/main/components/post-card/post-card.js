@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '../../../../components';
 import { Link } from 'react-router-dom';
@@ -45,41 +46,43 @@ const PostCardContainer = ({
 };
 
 export const PostCard = styled(PostCardContainer)`
-display: flex;
-flex-direction: column;
-width: 280px;
-margin: 20px;
-border: 1px solid #000;
-
- & img {
-	display: block;
-	width: 100%;
- }
-
- & h4 {
-	margin: 0;
- }
-
- & .post-card-footer {
-	padding: 5px;
-	border-top: 1px solid #000;
-
- }
-
- & .post-card-info {
 	display: flex;
-	justify-content: space-between;
-	margin-top: 5px;
- }
- & .published-at {
-	display: flex;
+	flex-direction: column;
+	width: 280px;
+	margin: 20px;
+	border: 1px solid #000;
 
- }
- & .comments-count {
-	display: flex;
+	& img {
+		display: block;
+		width: 100%;
+	}
 
- }
+	& h4 {
+		margin: 0;
+	}
 
+	& .post-card-footer {
+		padding: 5px;
+		border-top: 1px solid #000;
+	}
+
+	& .post-card-info {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 5px;
+	}
+	& .published-at {
+		display: flex;
+	}
+	& .comments-count {
+		display: flex;
+	}
 `;
 
-// продолжить 5. Главная страница 2. Верстка
+PostCard.propTypes = {
+	id: PropTypes.string.isRequired,
+	title: PropTypes.string.isRequired,
+	imageUrl: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+	commentsCount: PropTypes.number.isRequired,
+};

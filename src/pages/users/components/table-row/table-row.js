@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const TableRowContainer = ({ className, children }) => (
@@ -7,12 +8,11 @@ const TableRowContainer = ({ className, children }) => (
 export const TableRow = styled(TableRowContainer)`
 	display: flex;
 	align-items: center;
-	border: ${({ border}) => border ? '1px solid #000' : ' none'};
+	border: ${({ border }) => (border ? '1px solid #000' : ' none')};
 
 	& > div {
 		display: flex;
 		padding: 0 10px;
-
 	}
 
 	& > .login-column {
@@ -25,3 +25,7 @@ export const TableRow = styled(TableRowContainer)`
 		width: auto;
 	}
 `;
+
+TableRowContainer.propTypes = {
+	children: PropTypes.node.isRequired,
+};

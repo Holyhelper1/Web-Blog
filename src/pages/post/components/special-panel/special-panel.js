@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Icon } from '../../../../components';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +13,7 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const requestServer = useServerRequest();
-	const userRole = useSelector(selectUserRole)
+	const userRole = useSelector(selectUserRole);
 
 	const onPostRemove = (id) => {
 		dispatch(
@@ -45,15 +46,17 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 				{publishedAt}
 			</div>
 			{isAdmin && (
-			<div className="buttons">
-				{editButton}
-				{publishedAt && <Icon
-					id="fa-trash-o"
-					size="21px"
-					margin="0 0 0 10px"
-					onClick={() => onPostRemove(id)}
-				/>}
-			</div>
+				<div className="buttons">
+					{editButton}
+					{publishedAt && (
+						<Icon
+							id="fa-trash-o"
+							size="21px"
+							margin="0 0 0 10px"
+							onClick={() => onPostRemove(id)}
+						/>
+					)}
+				</div>
 			)}
 		</div>
 	);
@@ -77,3 +80,9 @@ export const SpecialPanel = styled(SpecialPanelContainer)`
 		display: flex;
 	}
 `;
+
+SpecialPanel.propTypes = {
+	id: PropTypes.string.isRequired,
+	publishedAt: PropTypes.string.isRequired,
+	editButton: PropTypes.node.isRequired,
+};
