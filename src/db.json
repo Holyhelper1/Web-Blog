@@ -27,6 +27,13 @@
       "registed_at": "2062-06-25 09:14",
       "role_id": 0,
       "id": "QazlTFO"
+    },
+    {
+      "login": "petr",
+      "password": "qwerty123",
+      "registed_at": "2061-03-07 17:20",
+      "role_id": 2,
+      "id": "as1zDIq"
     }
   ],
   "roles": [
@@ -189,6 +196,20 @@
       "published_at": "2057-05-02 14:20",
       "content": "ура комментарий",
       "id": 6
+    },
+    {
+      "author_id": "001",
+      "post_id": "004",
+      "published_at": "2044-05-23 13:31",
+      "content": "Новый комент антона",
+      "id": 7
+    },
+    {
+      "author_id": "001",
+      "post_id": "004",
+      "published_at": "2041-04-08 11:10",
+      "content": "ещё комент",
+      "id": 8
     }
   ],
   "sessions": [
@@ -257,6 +278,17 @@
         "roleId": 0
       },
       "id": 6
+    },
+    {
+      "hash": "0.23711147226901085893757681333227083086967468261719",
+      "user": {
+        "id": "001",
+        "login": "anton",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      },
+      "id": 7
     }
   ]
 }

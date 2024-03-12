@@ -6,7 +6,7 @@ import { Comments, PostContent, PostForm } from './components';
 
 import { useMatch, useParams } from 'react-router-dom';
 import { RESET_POST_DATA, loadPostsAsync } from '../../actions';
-import { selectPost } from '../../selectors';
+import { selectPost} from '../../selectors';
 import { Error, PrivateContent } from '../../components';
 import { ROLE } from '../../constants';
 
@@ -19,6 +19,7 @@ const PostContainer = ({ className }) => {
 	const isEditing = !!useMatch('/post/:id/edit');
 	const requestServer = useServerRequest();
 	const post = useSelector(selectPost);
+
 
 	useLayoutEffect(() => {
 		dispatch(RESET_POST_DATA);
@@ -39,6 +40,8 @@ const PostContainer = ({ className }) => {
 	if (isLoading) {
 		return null;
 	}
+
+
 
 	const SpecificPostPage =
 		isCreating || isEditing ? (
